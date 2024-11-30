@@ -1,0 +1,128 @@
+
+\documentclass[
+	%parspace, % Add vertical space between paragraphs
+	%noindent, % No indentation of first lines in each paragraph
+	%nohyp, % No hyphenation of words
+	%twoside, % Double sided format
+	%draft, % Quicker draft compilation without rendering images
+	%final, % Set final to hide todos
+]{elteikthesis}[2024/10/26]
+
+% The minted package is also supported for source highlighting
+% See elteikthesis_minted.tex for example
+%\usepackage[newfloat]{minted}
+\usepackage{listings}
+\usepackage{xcolor}
+% Document's metadata
+\title{Eventastic - Event Management System} % title
+\date{2025} % year of defense
+
+% Author's metadata
+\author{Ali Afzal}
+\degree{Computer Science BSc}
+
+% Superivsor(s)' metadata
+\supervisor{Gregory Morse} % internal supervisor's name
+\affiliation{Lecturer} % internal supervisor's affiliation
+%\extsupervisor{Jane Doe} % external supervisor's name
+%\extaffiliation{Senior Developer} % external supervisor's affiliation
+
+% University's metadata
+\university{Eötvös Loránd University} % university's name
+\faculty{Faculty of Informatics} % faculty's name
+\department{Dept. of Programming Languages and Compilers} % department's name
+\city{Budapest} % city
+\logo{elte_cimer_szines} % logo
+
+% Add bibliography file
+\addbibresource{elteikthesis.bib}
+
+
+
+% The document
+\begin{document}
+
+% Set document language
+%\documentlang{hungarian}
+\documentlang{english}
+
+% List of todos (not in the final document)
+%\listoftodos[\todolabel]
+
+% Title page (mandatory)
+\maketitle
+% Topic declaration page (mandatory) - can also be attached instead
+%\includepdf{topicdeclaration.pdf}
+
+% Custom topic declaration page
+\chapter*{Original Thesis Topic Declaration}
+
+
+\begin{center}
+   {\small
+This thesis proposes the development of a comprehensive \textbf{Event Management System} designed to simplify the entire event lifecycle, from creation to execution. The system will feature a user-friendly interface allowing event organizers to efficiently set up and manage event details such as date, time, location, and attendee lists. It will also support robust user authentication and authorization to ensure secure access and data protection.
+
+Key functionalities will include real-time notifications to keep users informed of any event updates or changes, and advanced search and filtering options to help users find events based on specific criteria like location and date. The system will facilitate attendee management through features like RSVP capabilities and attendee tracking, enhancing both security and engagement.
+
+Additionally, the system will integrate analytics and reporting tools to provide organizers with insights into event popularity, attendee demographics, and engagement metrics. This will aid in making informed decisions to optimize future events. Overall, the thesis focuses on delivering a scalable, efficient solution that enhances event organization, improves attendee experience, and provides actionable insights through data analysis.
+
+\vspace{0.5em} % Adjust vertical spacing
+
+\noindent \textbf{Features:}
+\begin{enumerate}
+    \item \textbf{Event Creation and Management:} Users can create events, set details like date, time, location, and manage attendees.
+    \item \textbf{User Authentication and Authorization:} Implement secure user management with roles for event creators, attendees, and administrators.
+    \item \textbf{Real-time Notifications:} Notify users about updates like new events, changes, or reminders.
+    \item \textbf{Search and Filtering:} Search for events based on location, date, or category.
+    \item \textbf{Event Participation:} RSVP to events, and event creators can manage attendees.
+    \item \textbf{Analytics and Reporting:} Insights into event popularity, attendee demographics, and engagement.
+\end{enumerate}
+}
+\end{center}
+
+\vfill % Pushes the content to the center vertically
+
+\cleardoublepage
+
+% Table of contents (mandatory)
+\tableofcontents
+\cleardoublepage
+
+% Main content
+\input{samples_en/intro.tex}
+\cleardoublepage
+
+\input{samples_en/user.tex}
+\cleardoublepage
+
+\input{samples_en/impl.tex}
+\cleardoublepage
+
+\input{samples_en/sum.tex}
+\cleardoublepage
+
+
+
+
+% Bibliography (mandatory)
+\phantomsection
+\addcontentsline{toc}{chapter}{\biblabel}
+\printbibliography[title=\biblabel]
+\cleardoublepage
+
+% List of figures (optional) - useful over 3-5 figures
+\phantomsection
+\addcontentsline{toc}{chapter}{\lstfigurelabel}
+\listoffigures
+\cleardoublepage
+
+
+
+% List of codes (optional) - useful over 3-5 code samples
+\phantomsection
+\addcontentsline{toc}{chapter}{\lstcodelabel}
+\lstlistoflistings
+\cleardoublepage
+
+
+\end{document}
